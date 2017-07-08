@@ -63,6 +63,15 @@ footer
   z-index: 1;
 }
 
+	.cont {
+	  height: 300px;
+  min-height: 300px;
+  background: #ededed;
+  position: relative;
+  z-index: 1;	
+		
+		
+	}
 .wrapper-parallax {
   margin-top: 100%;
   margin-bottom: 300px;
@@ -1263,10 +1272,7 @@ height: 640px;
     -->
     
     <line x1="325" y1="260" x2="325" y2="260" stroke="#fff" class="red-dot" />
-  </g>
-  
- 
-	
+  </g>	
 </svg>
 </div> 
 	<div class="scroll-down-dude"></div>	
@@ -1278,6 +1284,12 @@ height: 640px;
         <h1>Content</h1>
       </section>
 
+	       <section class="cont">
+	      
+	      
+        <h1>Content</h1>
+      </section>
+	      
       <footer>
         <h1>Footer</h1>
       </footer>
@@ -1348,7 +1360,7 @@ span.onclick = function() {
 $(window).load(function(){
     var windowHeight        = $(window).height(),
         footerHeight        = $('footer').height(),
-        heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 20;
+        heightDocument      = (windowHeight) + ($('.content').height()) ($('.cont').height()) + ($('footer').height()) - 20;
 
     // Definindo o tamanho do elemento pra animar
     $('#scroll-animate, #scroll-animate-main').css({
