@@ -1189,13 +1189,686 @@ height: 640px;
 	
 	/*-------------------------portfolio-------------------------*/
 	
-	
-	.konteineris {
-		height:700px;
-		width:100%;
-
-		
-	}
+	* {
+  box-sizing: border-box;
+  -webkit-transition: 0.333s ease;
+  transition: 0.333s ease;
+}
+.rela-block {
+  display: block;
+  position: relative;
+  margin: auto;
+  top: ;
+  left: ;
+  right: ;
+  bottom: ;
+}
+.rela-inline {
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  top: ;
+  left: ;
+  right: ;
+  bottom: ;
+}
+.floated {
+  display: inline-block;
+  position: relative;
+  margin: false;
+  top: ;
+  left: ;
+  right: ;
+  bottom: ;
+  float: left;
+}
+.abs-center {
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 50%;
+  left: 50%;
+  right: false;
+  bottom: false;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  width: 88%;
+}
+body {
+  font-family: "Open Sans";
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  line-height: 24px;
+  background-color: #ececec;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.photo-container {
+  z-index: -1;
+  display: false;
+  position: fixed;
+  margin: false;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background-color: rgba(0,0,0,0.73);
+}
+.photo-container.displayed {
+  z-index: 200;
+  opacity: 1;
+}
+.photo-container.displayed .photo-tab {
+  top: 45%;
+}
+.photo-container.displayed .photo-details {
+  bottom: 4%;
+  -webkit-transition: 0.35s ease, bottom 0.35s 0.35s ease;
+  transition: 0.35s ease, bottom 0.35s 0.35s ease;
+}
+.photo-container .close {
+  color: #fff;
+  margin: 30px;
+  cursor: pointer;
+}
+.photo-details {
+  display: false;
+  position: absolute;
+  margin: false;
+  top: false;
+  left: 50%;
+  right: false;
+  bottom: -30%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  width: 60%;
+  max-width: 700px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  line-height: 24px;
+}
+.photo-details h2 {
+  font-family: "Montserrat";
+  font-size: 18px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.photo-details ul {
+  text-align: justify;
+  margin-left: -15px;
+}
+.photo-details li {
+  margin: auto 15px;
+}
+.photo-details span {
+  font-weight: 600;
+}
+.photo-tab {
+  z-index: 300;
+  top: 55%;
+  width: 50%;
+  padding-bottom: 50%;
+  margin: auto;
+  background-size: contain !important;
+  background-position: center !important;
+}
+.side-menu {
+  z-index: 100;
+  display: false;
+  position: fixed;
+  margin: false;
+  top: 0;
+  left: -360px;
+  right: false;
+  bottom: 0;
+  width: 360px;
+  background-color: #1a1a1a;
+  padding-top: 80px;
+}
+.list-header {
+  color: #888;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+.options-list {
+  margin-bottom: 40px;
+}
+.options-list li {
+  height: 50px;
+  color: #ccc;
+  line-height: 50px;
+  padding-left: 30px;
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+.options-list li:hover {
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+.social-buttons-container {
+  display: false;
+  position: absolute;
+  margin: false;
+  top: false;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  text-align: center;
+}
+.social-button {
+  height: 55px;
+  width: 55px;
+  margin: 0 5px;
+  background-size: cover !important;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  cursor: pointer;
+}
+.social-button.twitter {
+  background: url("https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/twitter_online_social_media-128.png") no-repeat center;
+}
+.social-button.facebook {
+  background: url("https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_facebook-128.png") no-repeat center;
+}
+.social-button.pinterest {
+  background: url("https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/online_social_media_pinterest-128.png") no-repeat center;
+}
+.social-button.instagram {
+  background: url("https://cdn2.iconfinder.com/data/icons/black-white-social-media/32/instagram_online_social_media_photo-128.png") no-repeat center;
+}
+.social-button:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.3s cubic-bezier(0.3, 0.2, 0, 2.5);
+  transition: 0.3s cubic-bezier(0.3, 0.2, 0, 2.5);
+}
+.top-bar {
+  z-index: 5;
+  height: 200px;
+  background-color: #1a1a1a;
+  text-align: center;
+  overflow: hidden;
+}
+.top-bar .link {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0;
+  top: 30px;
+  text-decoration: none;
+  color: #999;
+}
+.checkbox-label {
+  z-index: 101;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.checkbox-label:after {
+  height: 100%;
+  font-family: "Open Sans";
+  font-size: 18px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #000;
+  opacity: 0;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+.checkbox-label:hover:after {
+  opacity: 1;
+}
+.checkbox-label.side-menu-label {
+  opacity: 1;
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 20px;
+  left: ;
+  right: 20px;
+  bottom: ;
+}
+.checkbox-label.menu-label {
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 20px;
+  left: 20px;
+  right: false;
+  bottom: false;
+}
+.checkbox-label.menu-label:after {
+  content: "MENU";
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 20%;
+  left: 45%;
+  right: false;
+  bottom: false;
+}
+.checkbox-label.menu-label:hover:after {
+  left: 100%;
+}
+.checkbox-label.search-label {
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 20px;
+  left: ;
+  right: 20px;
+  bottom: ;
+}
+.checkbox-label.search-label:after {
+  content: "SEARCH";
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 20%;
+  left: -100%;
+  right: false;
+  bottom: false;
+}
+.checkbox-label.search-label:hover:after {
+  left: -170%;
+}
+.black-lines {
+  height: 2px;
+  width: 18px;
+  background-color: #222;
+  left: 40%;
+}
+.black-lines:before,
+.black-lines:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 26px;
+  background-color: #222;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.black-lines:before {
+  top: -7px;
+}
+.black-lines:after {
+  top: 7px;
+}
+.magnifying-glass {
+  height: 32px;
+  width: 36px;
+}
+.magnifying-glass:before {
+  content: "";
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 3px;
+  left: 3px;
+  right: false;
+  bottom: false;
+  height: 16px;
+  width: 16px;
+  border: 2px solid #222;
+  border-radius: 100%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.magnifying-glass:after {
+  content: "";
+  display: false;
+  position: absolute;
+  margin: false;
+  top: false;
+  left: ;
+  right: 10px;
+  bottom: 3px;
+  height: 12px;
+  width: 2px;
+  background-color: #222;
+  -webkit-transform: rotate(-49deg);
+          transform: rotate(-49deg);
+}
+.white-x {
+  height: 40px;
+  width: 40px;
+}
+.white-x:before,
+.white-x:after {
+  content: "";
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 50%;
+  left: 50%;
+  right: false;
+  bottom: false;
+  height: 2px;
+  width: 26px;
+  background-color: #fff;
+}
+.white-x:before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.white-x:after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+input[type=checkbox] {
+  display: none;
+}
+#menuCheckbox:checked ~ .side-menu {
+  left: 0;
+  box-shadow: 2px 0px 18px 0px rgba(0,0,0,0.5);
+}
+#searchCheckbox:checked~ .top-container .top-center-container .top-text-container {
+  left: -100%;
+}
+#searchCheckbox:checked~ .top-container .top-center-container .top-search-container {
+  left: 0;
+}
+.top-container {
+  z-index: 10;
+  height: 200px;
+  width: 88%;
+  max-width: 1200px;
+  padding-top: 25px;
+  margin: -100px auto 50px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.2);
+}
+.top-container p {
+  color: #777;
+  margin: 0 auto 25px;
+}
+.top-container h2 {
+  color: #2b2b2b;
+  margin: 0 auto 12px;
+}
+.top-center-container {
+  height: 190px;
+  width: 84%;
+  overflow-x: hidden;
+}
+.inner-container {
+  width: 100%;
+  overflow: hidden;
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 0;
+  left: false;
+  right: false;
+  bottom: 0;
+}
+.inner-container.top-text-container {
+  left: 0;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.inner-container.top-search-container {
+  left: 100%;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.inner-container.top-search-container .search-text {
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 0;
+  left: 40px;
+  right: false;
+  bottom: false;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 20px;
+  color: #2b2b2b;
+}
+.top-search {
+  display: block;
+  position: relative;
+  margin: 25px auto;
+  top: ;
+  left: ;
+  right: ;
+  bottom: ;
+  font-family: "Open Sans";
+  font-size: 44px;
+  letter-spacing: 0;
+  font-weight: 600;
+  line-height: 70px;
+  height: 70px;
+  width: 85%;
+  padding: 0 20px;
+  color: #2b2b2b;
+  border: none;
+  border-bottom: 2px solid #999;
+}
+.top-search:focus {
+  outline: none;
+  border-bottom: 2px solid #2b2b2b;
+}
+.top-main-text {
+  text-transform: uppercase;
+  font-family: "Open Sans";
+  font-size: 24px;
+  letter-spacing: 5px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.button {
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 auto 25px;
+  width: 180px;
+  padding: 8px;
+  border: 1px solid #2b2b2b;
+  cursor: pointer;
+  text-align: center;
+}
+.button.white-text {
+  color: #fff;
+  background-color: #2b2b2b;
+}
+.button.white-text:hover {
+  color: #2b2b2b;
+  background-color: transparent;
+}
+.button.black-text {
+  color: #2b2b2b;
+  background-color: transparent;
+}
+.button.black-text:hover {
+  color: #fff;
+  background-color: #2b2b2b;
+}
+.button.load-button {
+  border-width: 4px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.image-layout-selector {
+  margin-bottom: 50px;
+  height: 50px;
+  width: 100px;
+}
+.image-layout-selector .layout-option {
+  height: 100%;
+  position: relative;
+  width: 50%;
+  cursor: pointer;
+}
+.image-layout-selector .layout-option.active .bars:before,
+.image-layout-selector .layout-option.active .bars:after {
+  background-color: #1a1a1a;
+}
+.bars {
+  height: 60%;
+  width: 60%;
+}
+.bars:before,
+.bars:after {
+  content: "";
+  background-color: #999;
+  -webkit-transition: 0.3333s ease;
+  transition: 0.3333s ease;
+}
+.bars:before {
+  color: #000;
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 0;
+  left: 0;
+  right: 60%;
+  bottom: 0;
+}
+.bars:after {
+  color: #000;
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 0;
+  left: 60%;
+  right: 0;
+  bottom: 0;
+}
+.bars.rotated {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+.image-grid-container {
+  margin-bottom: 40px;
+  height: auto;
+  width: 88%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+.image-column {
+  position: relative;
+  width: 33.3333333%;
+  text-align: center;
+}
+.image-column.rows {
+  width: 100%;
+}
+.image-column.rows .image {
+  padding-top: 50%;
+  margin-bottom: 60px;
+}
+.image {
+  width: 88%;
+  margin-bottom: 30px;
+  box-shadow: 0px 8px 25px -5px rgba(0,0,0,0.5);
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  cursor: pointer;
+}
+.image.wide {
+  padding-top: 50%;
+}
+.image.square {
+  padding-top: 80%;
+}
+.image.long {
+  padding-top: 110%;
+}
+.image.wide:before {
+  padding-top: 25%;
+}
+.image.square:before {
+  padding-top: 42%;
+}
+.image.long:before {
+  padding-top: 59%;
+}
+.image:before {
+  content: "View Image";
+  display: false;
+  position: absolute;
+  margin: false;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  opacity: 0;
+  background-color: rgba(0,0,0,0.7);
+  -webkit-transition: 0.33333s ease;
+  transition: 0.33333s ease;
+}
+.image:hover::before {
+  opacity: 1;
+}
+@media screen and (min-width: 1400px) {
+  .photo-tab {
+    padding-bottom: 45%;
+    width: 45%;
+  }
+}
+@media screen and (max-width: 629px) {
+  .photo-details {
+    width: 88%;
+  }
+  .photo-tab {
+    padding-bottom: 80%;
+    width: 80%;
+  }
+  .top-container {
+    height: 220px;
+  }
+  .top-center-container {
+    width: 75%;
+  }
+  .top-search {
+    height: 50px;
+    font-family: "Open Sans";
+    font-size: 32px;
+    letter-spacing: 0;
+    font-weight: 600;
+    line-height: 50px;
+  }
+  .image-layout-selector {
+    height: 0;
+    margin-bottom: 0;
+  }
+  .image-column {
+    width: 100%;
+  }
+  .image-column .image {
+    padding-top: 50%;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .top-search {
+    height: 36px;
+    font-family: "Open Sans";
+    font-size: 20px;
+    letter-spacing: 0;
+    font-weight: 600;
+    line-height: 36px;
+  }
+}
 
   </style></head><body>
   
@@ -1296,7 +1969,161 @@ height: 640px;
         <h1>privet</h1>
       </section>
 	      
-      <section class="content">      
+      <section class="content">   
+	      
+	      
+	      <div class="rela-block image-layout-selector">
+    <div class="floated layout-option rows">
+        <div class="abs-center bars rotated"></div>
+    </div>
+    <div class="floated layout-option columns active">
+        <div class="abs-center bars"></div>
+    </div>
+</div>
+
+<div class="rela-block image-grid-container">
+    <div class="floated image-column 1">
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+    </div>
+    <div class="floated image-column 2">
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+    </div>
+    <div class="floated image-column 3">
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+        <div class="rela-block image"></div>
+    </div>
+</div>
+
+<div class="rela-block button black-text load-button">Load More</div>
+
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script>// Pinspiration
+// https://www.behance.net/gallery/35580657/Unsplash-Website-Redesign
+
+// Array for feed images
+var imgArray = ['https://ribbonaroundabomb.files.wordpress.com/2013/06/hipster-art-three-of-the-possessed.jpg',
+                'https://41.media.tumblr.com/dec02412e0834d4a0d7f5f518cde3ab1/tumblr_mf0e9t1dGp1rhrqzqo1_1280.jpg',
+                'https://s-media-cache-ak0.pinimg.com/564x/24/3d/c2/243dc20dd6d5b00f713de85458182537.jpg',
+                'http://s5.favim.com/610/69/Favim.com-hot-art-beautiful-black-633061.jpg',
+                'http://favim.com/610/201108/24/Favim.com-black-black-and-white-cute-girl-hair-129749.jpg',
+                'http://artfucksme.com/wp-content/uploads/2015/04/gia3.jpg',
+                'https://d13yacurqjgara.cloudfront.net/users/464297/screenshots/1849217/dribbb2-01_1x.jpg',
+                'http://animalnewyork.com/wp-content/uploads/glitch-pillows.jpg',
+                'https://i.ytimg.com/vi/l8gT1KywQpU/maxresdefault.jpg',
+                'https://s-media-cache-ak0.pinimg.com/736x/7e/fe/f0/7efef0e2ba68011139130b19ff6aaf87.jpg',
+                'https://i.ytimg.com/vi/UsfhWF6mE7A/maxresdefault.jpg',
+                'https://s-media-cache-ak0.pinimg.com/236x/89/da/4c/89da4cd694aa1a134a8db877f68517b9.jpg',
+                'http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-326146.jpg',
+                'https://cdn-img-2.wanelo.com/p/eb6/752/4fa/2b3876bbab34d77bac4d463/x354-q80.jpg',
+                'http://s2.favim.com/orig/30/amazing-astronaut-beautiful-earth-hipster-Favim.com-245303.jpg',
+                'https://s-media-cache-ak0.pinimg.com/236x/fd/5b/1c/fd5b1c54cb4f4fd484c0a27e6a1885de.jpg',
+                'https://s-media-cache-ak0.pinimg.com/736x/06/7f/a1/067fa1766c1e02258e9bb751460a47bd.jpg',
+                'https://pbs.twimg.com/media/Ce0fLfjUAAAQbs8.jpg',
+                'http://wallup.net/wp-content/uploads/2016/01/239135-No_Mans_Sky-video_games-pixel_art-fan_art-736x459.jpg',
+                'http://cdn.arenabg.com/resize/500/-/var/assets/posters/2013-05/ea31966a0c2e34bd6982873170f36cc79bdf31e7.jpg',
+                'http://static.giantbomb.com/uploads/original/3/35099/2184043-fez9.jpg',
+                'https://pbs.twimg.com/media/Ce7EjAZVAAEmq0K.jpg',
+                'http://www.heart-machine.com/wp-content/uploads/2015/01/HLD_Screenshot_01_rise_1080.png',
+                'http://designbent.com/wp-content/uploads/2013/05/The_Connection.jpg',
+                'http://cache.spreadshirt.net/Public/submissions/lafraise/785/106785.jpg',
+                'http://images.wookmark.com/156306_tumblr_mcebl1vava1r46py4o1_1280.jpg',
+                'https://s-media-cache-ak0.pinimg.com/736x/03/37/0c/03370c885c0ef23326cb667a3637b0af.jpg',
+                'http://media-cache-ak0.pinimg.com/736x/2a/4c/4b/2a4c4b85a760a54dbd68f253199cbbe4.jpg',
+                'http://fraghero.com/wp-content/uploads/2016/02/7-6.jpg',
+                'https://fat.gfycat.com/SaltyLavishIndianrhinoceros.gif','',
+                'https://seesouthernstars.files.wordpress.com/2015/06/porkey.jpg'];
+
+// Loop for placing the images into the divs on the page
+for(var i=0;i<imgArray.length;i++) {if (window.CP.shouldStopExecution(1)){break;}
+
+    // Changing height to width ratio of div based on the ratio of the image - SIZING NOT WORKING 100%
+    var img = new Image();
+    img.src = imgArray[i];
+    if((img.width / img.height) > 1.2) {$('.image').eq(i).addClass('wide')}
+    else if((img.width / img.height) < 0.8333) {$('.image').eq(i).addClass('long')}
+    else {$('.image').eq(i).addClass('square')}; // Fallback to normal square
+
+    // Setting the Background image
+    $('.image').eq(i).css('background-image', 'url("'+imgArray[i]+'")');
+}
+window.CP.exitedLoop(1);
+;
+
+// Load More images function - NOT WORKING PROPERLY WITH THE SIZING
+$('.load-button').click(function(){
+    for(var j = 1; j < 4; j++){if (window.CP.shouldStopExecution(3)){break;}
+        var imageNum = $('.image').length; // Getting total number of images on the page.
+
+        for(var i = 1; i < 4; i++){if (window.CP.shouldStopExecution(2)){break;}
+            var thisImageNum = imageNum + i;
+            $('.image-column.'+i).append('<div class="rela-block image '+thisImageNum+'"></div>'); 
+
+            var img = new Image();
+            img.src = imgArray[thisImageNum - 1];
+            if((img.width / img.height) > 1.2) {$('.image.'+thisImageNum).addClass('wide')}
+            else if((img.width / img.height) < 0.8333) {$('.image.'+thisImageNum).addClass('long')}
+            else {$('.image.'+thisImageNum).addClass('square')};
+
+            // Setting the Background image
+            $('.image.'+thisImageNum).css('background-image', 'url("'+imgArray[thisImageNum - 1]+'")');
+        }
+window.CP.exitedLoop(2);
+;
+    }
+window.CP.exitedLoop(3);
+;
+    return false;
+});
+
+// Image Layout Switching Function
+$('.layout-option').click(function(){
+    $('.layout-option').removeClass('active');
+    $(this).addClass('active');
+    $(this).hasClass('rows')?$('.image-column').addClass('rows'):$('.image-column').removeClass('rows');
+    return false;
+});
+
+// Display Image function
+// Click function written this way due to dynamically added images
+$('.image-grid-container').on('click', '.image', function() {
+    
+    // get the url image clicked
+    var thisBG = $(this).css('background-image');
+    
+    //assign background to the pop-up and display
+    $('.photo-tab').css('background',thisBG+' center no-repeat');
+    $('.photo-container').addClass('displayed');
+    return false;
+});
+
+// closing the menu-overlay
+$('.close, .photo-container').click(function(){ 
+    $('.photo-tab').css('background','none');
+    $('.photo-container').removeClass('displayed'); return false;
+});
+// preventing clicks on the menu closing it for now because there is nothing inside yet.
+$('.photo-tab').click(function(){ return false; }); 
+//# sourceURL=pen.js
+</script>
+	      
+	      
+	      
+	      
+	      
         <h1>Content</h1>
       </section>
 
