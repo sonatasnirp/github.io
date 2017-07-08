@@ -108,7 +108,42 @@ footer,
   -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1);
      -moz-transition-timing-function: cubic-bezier(0, 0, 0, 1);
       transition-timing-function: cubic-bezier(0, 0, 0, 1);
-}</style></head><body>
+}
+  
+ /*----slide-----*/
+  
+  .intro-animation {
+  overflow: hidden;
+}
+.intro-animation .left, .intro-animation .right {
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 120;
+}
+.intro-animation .left {
+  background: #333;
+  right: 50%;
+  width: 50%;
+  height: 100%;
+}
+.intro-animation .right {
+  background: #f4f4f4;
+  right: 0;
+  width: 50%;
+}
+
+  
+  
+  </style></head><body>
+  
+  <div class="intro-animation">
+	<div class="left"></div>
+	<div class="right"></div>
+</div>
+  
+  
 <div id="scroll-animate">
   <div id="scroll-animate-main">
     <div class="wrapper-parallax">
